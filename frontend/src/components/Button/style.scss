@@ -1,0 +1,118 @@
+@import '../../assets/scss/theme-variable.scss';
+
+.lukymoon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 24px;
+  width: auto;
+  max-width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  outline: none;
+  box-shadow: unset !important;
+  border-style: unset;
+  background: #30d5c8 !important;
+  height: 40px;
+  font-family: 'Poppins';
+
+  @include themify($themes) {
+    background-color: themed('themeColor');
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.transparent-btn {
+    background: transparent !important;
+    border: 1px solid #7e747d !important;
+    color: #932db1;
+
+    @include themify($themes) {
+      color: themed('themeColor');
+    }
+  }
+
+  &.transparent-red-btn {
+    border: 2px solid #ff1e27;
+    background-color: transparent !important;
+    color: #ff1e27;
+  }
+
+  &.transparent-black-btn {
+    border: 2px solid #000000;
+    background-color: transparent !important;
+    color: #000000;
+  }
+
+  &.disabled-btn {
+    background-color: rgba(28, 27, 31, 0.12) !important;
+    color: rgba($color: #1e1b1e, $alpha: 0.38) !important;
+    pointer-events: none;
+  }
+
+  &.purple-btn {
+    background-color: #e7deff !important;
+    color: #1f0060;
+  }
+
+  &.black-btn {
+    background-color: #2b292d;
+    color: #fff;
+  }
+
+  &.radius-btn {
+    border-radius: 56px;
+    font-size: 16px;
+    padding: 8px 30px;
+  }
+
+  &.inactive-btn {
+    background-color: #5b5a78;
+    color: #fff;
+  }
+
+  &.no-cursor {
+    pointer-events: none;
+  }
+
+  &.red-btn {
+    background-color: #830909;
+  }
+
+  &.white-btn {
+    background-color: #fff;
+    border-color: #6f8bdf;
+    color: #6f8bdf;
+  }
+
+  span {
+    img {
+      margin-right: 16px;
+
+      @media (max-width: 1366px) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1366px) {
+    line-height: 18px;
+    min-height: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    min-height: unset;
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-weight: 500;
+    min-height: 34px;
+  }
+}
