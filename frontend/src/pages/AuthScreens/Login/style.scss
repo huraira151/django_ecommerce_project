@@ -1,0 +1,58 @@
+@import "../../../assets/scss/theme-variable.scss";
+
+.login-section-wrapper {
+  height: 100%;
+  .login-form-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 30%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .login-form-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 30px;
+
+      h1 {
+        color: #6b5b95;
+        font-size: 25px;
+      }
+
+      .signin-btn {
+        background-color: #6b5b95 !important;
+        width: 150px;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      .signin-divider {
+        padding: 20px;
+        width: 100%;
+        color: #6b5b95;
+        opacity: 0.5;
+      }
+
+      .social-login-btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .google-login-btn,
+        .facebook-login-btn,
+        .linkedin-login-btn {
+          width: 200px !important;
+          font-size: 12px !important;
+
+          @media (max-width: 950px) {
+            width: 100px !important;
+            height: 30px !important;
+            font-size: 5px !important;
+          }
+        }
+      }
+    }
+  }
+}
