@@ -22,10 +22,10 @@ These instructions will help you set up and run the project on your local machin
 
 ### Below are the screenshots of this project
 
-![admin panel](./django_ecommerce_crud/static/admin_panel.png "Admin Panel")
+![admin panel](./ecommerce_project_django/static/admin_panel.png "Admin Panel")
 
-![product listing](./django_ecommerce_crud/static/product_listing.png "Product Listing")
+![product listing](./ecommerce_project_django/static/product_listing.png "Product Listing")
 
-![product update](./django_ecommerce_crud/static/product_create.png "Product Update")
+![product update](./ecommerce_project_django/static/product_create.png "Product Update")
 
-![swagger](./django_ecommerce_crud/static/swagger_aka_openapi.png "Swagger")
+![swagger](./ecommerce_project_django/static/swagger_aka_openapi.png "Swagger")
