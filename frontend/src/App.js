@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginScreen from './pages/AuthScreens/Login';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Abu Huraira
-      </header>
+      <LoginScreen />
     </div>
   );
 }
