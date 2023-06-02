@@ -1,8 +1,8 @@
 @import "../../../assets/scss/theme-variable.scss";
 
-.login-section-wrapper {
+.signup-section-wrapper {
   height: 100%;
-  .login-form-container {
+  .signup-form-container {
     background-color: #ffffff;
     border-radius: 20px;
     width: 30%;
@@ -11,7 +11,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .login-form-section {
+    .signup-form-section {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -22,14 +22,14 @@
         font-size: 25px;
       }
 
-      .signin-btn {
+      .signup-btn {
         background-color: #6b5b95 !important;
         width: 150px;
         border-radius: 50px;
         cursor: pointer;
       }
 
-      .signin-divider {
+      .signup-divider {
         padding: 20px;
         width: 100%;
         color: #6b5b95;
@@ -41,7 +41,7 @@
         align-items: center;
       }
 
-      .account-wrapper {
+      .signup-account-wrapper {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -51,12 +51,7 @@
         @media (max-width: 950px) {
           font-size: 12px;
         }
-        .forgot-pass {
-          color: #6b5b95;
-          padding-bottom: 5px;
-          align-items: flex-start !important;
-        }
-        .create-account {
+        .already-account {
           color: rgba(177, 165, 165, 0.911);
           a {
             color: #6b5b95;

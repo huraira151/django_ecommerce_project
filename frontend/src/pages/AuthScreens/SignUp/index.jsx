@@ -7,16 +7,28 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const LoginScreen = () => {
+const SignUpScreen = () => {
     return (
-        <div className='login-section-wrapper'>
-            <div className='login-form-container'>
-                <div className='login-form-section'>
-                    <h1>Login</h1>
+        <div className='signup-section-wrapper'>
+            <div className='signup-form-container'>
+                <div className='signup-form-section'>
+                    <h1>Sign Up</h1>
+                    <UInput
+                        placeholder='Name'
+                        type='text'
+                    />
                     <UInput
                         placeholder='Email'
                         type='email'
                         required={true}
+                    />
+                    <UInput
+                        placeholder='Phone Number'
+                        type='tel'
+                    />
+                    <UInput
+                        placeholder='Address'
+                        type='text'
                     />
                     <UInput
                         placeholder='Password'
@@ -24,14 +36,13 @@ const LoginScreen = () => {
                         required={true}
                     />
                     <Button
-                        title='Sign In'
-                        className='signin-btn'
+                        title='Sign Up'
+                        className='signup-btn'
                     />
-                    <div className='account-wrapper'>
-                        <a className='forgot-pass' href="http://localhost:3000/signup/">Forgot Password?</a>
-                        <span className='create-account'>Dont have an account! <a href="http://localhost:3000/signup/">Create one</a></span>
+                    <div className='signup-account-wrapper'>
+                        <span className='already-account'>Already have an account! <a href="http://localhost:3000/login/">Login</a></span>
                     </div>
-                    <Divider className='signin-divider'>or sign in with</Divider>
+                    <Divider className='signup-divider'>or sign up with</Divider>
                     <div className='social-login-btn-wrapper'>
                         <GoogleIcon style={{
                             color: '#db4437',
@@ -57,4 +68,4 @@ const LoginScreen = () => {
     )
 }
 
-export default LoginScreen;
+export default SignUpScreen;
