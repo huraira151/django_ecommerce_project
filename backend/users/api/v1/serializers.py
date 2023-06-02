@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from users.models import Seller
+from rest_auth.serializers import LoginSerializer
 
 User = get_user_model()
 
@@ -39,6 +40,10 @@ class UserSignUpSerializer(serializers.ModelSerializer):
                                   email=user.email,
                                   phone_number=user.phone_number)
         return user
+
+
+class UserLoginSerializer(LoginSerializer):
+    username = serializers.CharField(required=False, read_only=True)
 
 
 class UserSerializer(serializers.ModelSerializer):
