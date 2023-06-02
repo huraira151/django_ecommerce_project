@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = [
     "phonenumbers",
     "drf_yasg",
     "djstripe",
+    "rest_auth",
 ]
 
 AUTH_USER_MODEL = "users.User"
