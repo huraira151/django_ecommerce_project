@@ -36,13 +36,11 @@ function* postLoginInfo({ data }) {
     const response = yield call(postLoginAPI, data)
     yield put(loginRequestSuccess(response?.data?.user))
     localStorage.setItem("token", response.data.token)
-    history.push('/admin/home')
+    history.push('/home')
     yield put(loginRequestFailure(false))
   } catch (e) {
     const { response } = e
-    response?.data?.non_field_errors && toast.error(response?.data.non_field_errors, {
-      id: "card fields"
-    })
+    response?.data?.non_field_errors && toast.error(response?.data.non_field_errors)
     yield put(loginRequestFailure(response?.data))
   }
 }

@@ -6,6 +6,7 @@ import { Divider } from '@mui/material'
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { history } from '../../../reduxStore/store'
 
 const SignUpScreen = () => {
     return (
@@ -40,7 +41,7 @@ const SignUpScreen = () => {
                         className='signup-btn'
                     />
                     <div className='signup-account-wrapper'>
-                        <span className='already-account'>Already have an account! <a href="http://localhost:3000/login/">Login</a></span>
+                        <span className='already-account'>Already have an account!<p onClick={() => history.push("/login")}> Login</p></span>
                     </div>
                     <Divider className='signup-divider'>or sign up with</Divider>
                     <div className='social-login-btn-wrapper'>
