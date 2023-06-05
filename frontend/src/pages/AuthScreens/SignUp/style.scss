@@ -52,9 +52,13 @@
           font-size: 12px;
         }
         .already-account {
+          display: flex;
           color: rgba(177, 165, 165, 0.911);
-          a {
+          p {
             color: #6b5b95;
+            text-decoration: underline;
+            margin: 0;
+            cursor: pointer;
           }
         }
       }
