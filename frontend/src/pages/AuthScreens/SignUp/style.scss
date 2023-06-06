@@ -6,10 +6,28 @@
     background-color: #ffffff;
     border-radius: 20px;
     width: 30%;
+    height: 85%;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: auto !important;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 1100px) {
+      width: 40%;
+    }
+
+    @media (max-width: 850px) {
+      width: 50%;
+    }
+
+    @media (max-width: 500px) {
+      width: 80%;
+    }
 
     .signup-form-section {
       display: flex;
@@ -18,12 +36,12 @@
       padding: 20px 30px;
 
       h1 {
-        color: #6b5b95;
+        color: #000000;
         font-size: 25px;
       }
 
       .signup-btn {
-        background-color: #6b5b95 !important;
+        background-color: #000000 !important;
         width: 150px;
         border-radius: 50px;
         cursor: pointer;
@@ -55,7 +73,7 @@
           display: flex;
           color: rgba(177, 165, 165, 0.911);
           p {
-            color: #6b5b95;
+            color: #000000;
             text-decoration: underline;
             margin: 0;
             cursor: pointer;
