@@ -11,6 +11,7 @@ coreschema==0.0.4
 dj-stripe==2.7.3
 Django==3.2.19
 django-4-jet @ https://github.com/Barukimang/django-jet/archive/dev.zip#sha256=73bfdc1ee258ae78c2a1149bea889de8d8a70b1b5807c769c5277f1b40bab499
+django-cors-headers==4.0.0
 django-environ==0.10.0
 django-phonenumber-field==7.1.0
 django-phonenumbers==1.0.1
