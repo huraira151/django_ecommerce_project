@@ -1,4 +1,4 @@
-@import '../../assets/scss/theme-variable.scss';
+@import "../../assets/scss/theme-variable.scss";
 
 .lukymoon-btn {
   display: flex;
@@ -18,10 +18,10 @@
   border-style: unset;
   background: #30d5c8 !important;
   height: 40px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 
   @include themify($themes) {
-    background-color: themed('themeColor');
+    background-color: themed("themeColor");
   }
 
   &.full-width {
@@ -34,7 +34,7 @@
     color: #932db1;
 
     @include themify($themes) {
-      color: themed('themeColor');
+      color: themed("themeColor");
     }
   }
 

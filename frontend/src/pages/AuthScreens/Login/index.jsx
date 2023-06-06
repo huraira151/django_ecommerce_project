@@ -113,6 +113,7 @@ const LoginScreen = (props) => {
                         className='signin-btn'
                         showSpinner={requesting}
                         onClick={() => onSubmit()}
+                        disabled={PassError?.length > 0 || emailError?.length > 0 ? true : false}
                     />
                     <div className='account-wrapper'>
                         <p className='forgot-pass' onClick={() => history.push("/signup")}>Forgot Password?</p>
