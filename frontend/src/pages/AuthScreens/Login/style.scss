@@ -5,11 +5,19 @@
   .login-form-container {
     background-color: #ffffff;
     border-radius: 20px;
-    width: 30%;
+    width: 40%;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 850px) {
+      width: 50%;
+    }
+
+    @media (max-width: 760px) {
+      width: 75%;
+    }
 
     .login-form-section {
       display: flex;
@@ -17,13 +25,17 @@
       align-items: center;
       padding: 20px 30px;
 
+      @media (max-width: 400px) {
+        padding: 5px 15px;
+      }
+
       h1 {
-        color: #6b5b95;
+        color: black;
         font-size: 25px;
       }
 
       .signin-btn {
-        background-color: #6b5b95 !important;
+        background-color: black !important;
         width: 150px;
         border-radius: 50px;
         cursor: pointer;
@@ -52,7 +64,7 @@
           font-size: 12px;
         }
         .forgot-pass {
-          color: #6b5b95;
+          color: black;
           padding-bottom: 5px;
           align-items: flex-start !important;
           margin: 0;
@@ -63,7 +75,7 @@
           display: flex;
           color: rgba(177, 165, 165, 0.911);
           p {
-            color: #6b5b95;
+            color: black;
             text-decoration: underline;
             margin: 0 !important;
             cursor: pointer;

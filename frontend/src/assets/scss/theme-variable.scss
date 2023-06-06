@@ -1,39 +1,41 @@
 $themes: (
-  light: (themeColor: #932DB1,
-    bodyBackgroundColor: #FFFBFF,
-    textColor: #1F1B16,
-    authFormWrapperBg: #FFFFFF,
+  light: (
+    themeColor: #932db1,
+    bodyBackgroundColor: #fffbff,
+    textColor: #1f1b16,
+    authFormWrapperBg: #ffffff,
     typeSelectorBg: #fff,
-    typeSelectorActiveBg: #FCDDBC,
-    welcomeText: #F0E0D0,
+    typeSelectorActiveBg: #fcddbc,
+    welcomeText: #f0e0d0,
     signButtonFill: #855400,
-    menuActiveBg: #E7DEFF,
+    menuActiveBg: #e7deff,
   ),
-  dark: (themeColor: #932DB1,
-    bodyBackgroundColor: #1F1B16,
-    textColor: #EBE1D9,
+  dark: (
+    themeColor: #932db1,
+    bodyBackgroundColor: #1f1b16,
+    textColor: #ebe1d9,
     authFormWrapperBg: #fff,
-    typeSelectorBg: #1F1B16,
-    typeSelectorActiveBg: #FCDDBC,
-    welcomeText: #1F1B16,
-    signButtonFill: #FFFFFF,
-    menuActiveBg: #FCDDBC,
+    typeSelectorBg: #1f1b16,
+    typeSelectorActiveBg: #fcddbc,
+    welcomeText: #1f1b16,
+    signButtonFill: #ffffff,
+    menuActiveBg: #fcddbc,
   ),
 );
 
 @mixin themify($themes) {
-
-  @each $theme,
-  $map in $themes {
+  @each $theme, $map in $themes {
     .theme-#{$theme} & {
       $theme-map: () !global;
 
-      @each $key,
-      $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map,
-          ($key: $value,
-          )) !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
       }
 
       @content;
