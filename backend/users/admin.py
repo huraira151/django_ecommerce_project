@@ -11,7 +11,7 @@ User = get_user_model()
 class CustomUserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
-    fieldsets = (("User", {"fields": ("name", "phone_number", "stripe_customer_id", "image", "is_staff",
+    fieldsets = (("User", {"fields": ("email", "name", "phone_number", "stripe_customer_id", "image", "is_staff",
                                       "is_superuser", "is_active", "password")}),)
     add_fieldsets = (
         (None, {
