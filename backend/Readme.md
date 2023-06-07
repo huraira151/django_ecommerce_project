@@ -29,3 +29,5 @@ These instructions will help you set up and run the project on your local machin
 ![product update](./ecommerce_project_django/static/product_create.png "Product Update")
 
 ![swagger](./ecommerce_project_django/static/swagger_aka_openapi.png "Swagger")
+
+Url for getting Test Access Token of facebook https://developers.facebook.com/tools/explorer/

@@ -11,6 +11,8 @@ urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('social-login/', include('social_login.api.v1.urls')),
     path('api/v1/', include('users.api.v1.urls')),
     path('api/v1/', include('stores.api.v1.urls')),
     path('api/v1/', include('payments.api.v1.urls')),
