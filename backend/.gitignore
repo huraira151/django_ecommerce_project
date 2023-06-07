@@ -1,7 +1,10 @@
 *.pyc
 env/
 .terraform
-#.env
+.env
+.idea/*
+*.idea
+.idea
 staticfiles/
 postgres-data/
 db.sqlite3
