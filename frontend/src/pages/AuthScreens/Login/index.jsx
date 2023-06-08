@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import './style.scss'
 import Button from '../../../components/Button/index'
 import UInput from '../../../components/UInput/index'
@@ -10,10 +10,18 @@ import { history } from '../../../reduxStore/store'
 import useForm from '../../../utils/useForm'
 import { loginRequest, loginRequestFailure } from './redux/action'
 import { connect } from 'react-redux';
+import { LoginSocialFacebook } from 'reactjs-social-login';
 
 const LoginScreen = (props) => {
+    const [provider, setProvider] = useState('')
+    const [profile, setProfile] = useState([])
     const [PassError, setPassError] = useState("")
     const [emailError, setEmailError] = useState("")
+
+    useEffect(() => {
+        console.log("provider000000000000000000000", provider)
+        console.log("profile1111111111111111111111", profile)
+    }, [])
 
     const {
         loginRequest,
@@ -54,6 +62,16 @@ const LoginScreen = (props) => {
         };
         loginRequest(data);
     };
+
+    const onLoginStart = useCallback(() => {
+        alert('Sure? you want to login with facebook');
+    }, []);
+
+    const onLogoutSuccess = useCallback(() => {
+        setProfile(null);
+        setProvider('');
+        alert('logout success');
+    }, []);
 
     return (
         <div className='login-section-wrapper'>
@@ -129,12 +147,29 @@ const LoginScreen = (props) => {
                             cursor: "pointer",
                             fontSize: "30px"
                         }} className='google-icon' />
-                        <FacebookIcon style={{
-                            color: '#3b5998',
-                            marginRight: "10px",
-                            cursor: "pointer",
-                            fontSize: "30px"
-                        }} className='google-icon' />
+                        <LoginSocialFacebook
+                            appId={'697608738742008'}
+                            fieldsProfile={
+                                'id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender'
+                            }
+                            onLoginStart={onLoginStart}
+                            onLogoutSuccess={onLogoutSuccess}
+                            redirect_uri={'https://09ac-39-53-124-139.ngrok-free.app/'}
+                            onResolve={({ provider, data }) => {
+                                setProvider(provider);
+                                console.log("0000000000000000000", data);
+                                setProfile(data);
+                            }}
+                            onReject={err => {
+                                console.log(err);
+                            }}>
+                            <FacebookIcon style={{
+                                color: '#3b5998',
+                                marginRight: "10px",
+                                cursor: "pointer",
+                                fontSize: "30px"
+                            }} className='google-icon' />
+                        </LoginSocialFacebook>
                         <LinkedInIcon style={{
                             color: '#0077b5',
                             cursor: "pointer",
