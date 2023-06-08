@@ -1,8 +1,16 @@
 import React from 'react'
+import Header from '../../components/Header';
+import './style.scss'
 
 const Home = () => {
     return (
-        <div style={{ color: "#FFFFFF", fontSize: "80px", fontWeight: "600" }}>Welcome</div>
+        <Header>
+            <div className='home-wrapper'>
+                <div className='home-section'>
+                    Welcome
+                </div>
+            </div>
+        </Header>
     )
 }
 
