@@ -2,6 +2,21 @@
 
 .signup-section-wrapper {
   height: 100%;
+  background-image: linear-gradient(
+    to right top,
+    #000000,
+    #342a2a,
+    #65504b,
+    #987b6c,
+    #c8ac8d,
+    #dbbf93,
+    #ecd49a,
+    #f9eaa1,
+    #f4e18b,
+    #efd974,
+    #ebd05d,
+    #e6c744
+  );
   .signup-form-container {
     background-color: #ffffff;
     border-radius: 20px;
