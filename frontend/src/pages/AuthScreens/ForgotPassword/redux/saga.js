@@ -39,7 +39,6 @@ function* postForgotPass({ data }) {
     history.push('/reset-pass')
   } catch (e) {
     const { response } = e
-    // response?.data?.non_field_errors && toast.error(response?.data.non_field_errors)
     yield put(forgotpassRequestFailure(response?.data))
   }
 }
