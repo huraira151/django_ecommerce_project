@@ -10,6 +10,8 @@ import SignUpScreen from './pages/AuthScreens/SignUp';
 import Home from './pages/Home';
 import RouterGuard from './components/RouterGuard';
 import Layout from './components/Layout';
+import ForgotPassScreen from './pages/AuthScreens/ForgotPassword';
+import ResetPasswordScreen from './pages/AuthScreens/ResetPassword';
 
 function App() {
   // const { loginInfo } = props;
@@ -20,6 +22,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/signup" element={<SignUpScreen />} />
+          <Route path="/forgot-pass" element={<ForgotPassScreen />} />
+          <Route path="/reset-pass" element={<ResetPasswordScreen />} />
           <Route element={<RouterGuard />}>
             <Route path="/home" element={<Home />} />
           </Route>

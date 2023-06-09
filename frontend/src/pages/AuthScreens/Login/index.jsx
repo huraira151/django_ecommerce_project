@@ -18,11 +18,6 @@ const LoginScreen = (props) => {
     const [PassError, setPassError] = useState("")
     const [emailError, setEmailError] = useState("")
 
-    useEffect(() => {
-        console.log("provider000000000000000000000", provider)
-        console.log("profile1111111111111111111111", profile)
-    }, [])
-
     const {
         loginRequest,
         BEError,
@@ -134,7 +129,7 @@ const LoginScreen = (props) => {
                         disabled={PassError?.length > 0 || emailError?.length > 0 ? true : false}
                     />
                     <div className='account-wrapper'>
-                        <p className='forgot-pass' onClick={() => history.push("/signup")}>Forgot Password?</p>
+                        <p className='forgot-pass' onClick={() => history.push("/forgot-pass")}>Forgot Password?</p>
                         <span className='create-account'>Dont have an account!
                             <p onClick={() => history.push("/signup")}>Create one</p>
                         </span>
