@@ -12,12 +12,14 @@ import RouterGuard from './components/RouterGuard';
 import Layout from './components/Layout';
 import ForgotPassScreen from './pages/AuthScreens/ForgotPassword';
 import ResetPasswordScreen from './pages/AuthScreens/ResetPassword';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   // const { loginInfo } = props;
 
   return (
     <div className="App">
+      <Toaster position='top-center' />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/login" element={<LoginScreen />} />
