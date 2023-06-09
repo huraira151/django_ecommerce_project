@@ -36,6 +36,7 @@ function* postLoginInfo({ data }) {
     const response = yield call(postLoginAPI, data)
     yield put(loginRequestSuccess(response?.data?.user))
     localStorage.setItem("token", response.data.token)
+    toast.success("Logged in successfully")
     history.push('/home')
     yield put(loginRequestFailure(false))
   } catch (e) {
@@ -44,6 +45,7 @@ function* postLoginInfo({ data }) {
     yield put(loginRequestFailure(response?.data))
   }
 }
+
 export default all([
   takeLatest(POST_LOGIN_REQUEST, postLoginInfo),
 ])
