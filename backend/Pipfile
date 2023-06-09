@@ -49,6 +49,9 @@ uritemplate = "==4.1.1"
 urllib3 = "==2.0.3"
 whitenoise = "==5.1.0"
 feedparser = "*"
+sendgrid = "==6.9.7"
+django-sendgrid-v5 = "*"
+django-rest-passwordreset = "*"
 
 [dev-packages]
 

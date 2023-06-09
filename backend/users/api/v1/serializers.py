@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from users.models import Seller
 from rest_auth.serializers import LoginSerializer
+from django_rest_passwordreset.serializers import PasswordTokenSerializer
 
 User = get_user_model()
 
@@ -57,3 +58,14 @@ class SellerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seller
         fields = '__all__'
+
+
+class ResetPasswordConfirmSerializer(PasswordTokenSerializer):
+    confirm_password = serializers.CharField(write_only=True, style={"input_type": "password"})
+
+    def validate(self, attrs):
+        password = attrs.get('password')
+        confirm_password = attrs.get("confirm_password")
+        if password != confirm_password:
+            raise serializers.ValidationError("Passwords does not match")
+        return attrs
