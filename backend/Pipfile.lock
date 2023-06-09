@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "35eafaaa30015568e5cb6e055a5fbcf485b6e40ce69654471900ecbef8237cc2"
+            "sha256": "bac93b6100d211b37aa923e7a2cf981a997e75dd0199fbf4c1c0f6849454faac"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -228,6 +228,22 @@
             "index": "pypi",
             "version": "==0.9.5"
         },
+        "django-rest-passwordreset": {
+            "hashes": [
+                "sha256:0d76eb8d0be9636f4404fd35e8a0842c968effeac1d141c55a45aef1ebce54c7",
+                "sha256:f888fcb589c46e2f86f9686751de4cc1350c519aa3b120b993b1d675fd96fad6"
+            ],
+            "index": "pypi",
+            "version": "==1.3.0"
+        },
+        "django-sendgrid-v5": {
+            "hashes": [
+                "sha256:a5ebbdabb7c317defdf55fee67d1d062f54066e7579fc77b678a1d918890336f",
+                "sha256:fc55d0116e696850d8133c20239d2f5b6fb155193389aa56559c4410da53b63a"
+            ],
+            "index": "pypi",
+            "version": "==1.2.2"
+        },
         "djangorestframework": {
             "hashes": [
                 "sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4",
@@ -440,6 +456,14 @@
             "index": "pypi",
             "version": "==2.8.6"
         },
+        "python-http-client": {
+            "hashes": [
+                "sha256:ad371d2bbedc6ea15c26179c6222a78bc9308d272435ddf1d5c84f068f249a36",
+                "sha256:bf841ee45262747e00dec7ee9971dfb8c7d83083f5713596488d67739170cea0"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==3.3.7"
+        },
         "python3-openid": {
             "hashes": [
                 "sha256:33fbf6928f401e0b790151ed2b5290b02545e8775f982485205a066f874aaeaf",
@@ -523,6 +547,14 @@
             "index": "pypi",
             "version": "==0.2.7"
         },
+        "sendgrid": {
+            "hashes": [
+                "sha256:ba8d3d39e1f392b9434365d53983b2fc6a458ae0496d2d9e103c15e1743ab66b",
+                "sha256:fa30411c627690fecd0ef6b1d4e1783f2d0272aa14b5fffb133ebd1e31114f16"
+            ],
+            "index": "pypi",
+            "version": "==6.9.7"
+        },
         "sgmllib3k": {
             "hashes": [
                 "sha256:7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"
@@ -544,6 +576,12 @@
             ],
             "index": "pypi",
             "version": "==0.4.4"
+        },
+        "starkbank-ecdsa": {
+            "hashes": [
+                "sha256:9399c3371b899d4a235b68a1ed7919d202fbf024bd2c863ae8ebdad343c2a63a"
+            ],
+            "version": "==2.2.0"
         },
         "stripe": {
             "hashes": [
