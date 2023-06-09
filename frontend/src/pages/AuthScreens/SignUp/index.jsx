@@ -204,7 +204,7 @@ const SignUpScreen = (props) => {
                         }
                     />
                     <Button
-                        title='Sign Up'
+                        title={requesting ? '' : 'Sign Up'}
                         className='signup-btn'
                         showSpinner={requesting}
                         onClick={() => onSubmit()}
