@@ -1,6 +1,8 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import Image from '../Image';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 // Style
 import './style.scss';
@@ -33,9 +35,10 @@ const Button = ({
         {title}
       </span>
       {spinner && (
-        <Spinner as="span" animation="border" size="sm" className="ms-2" />
+        <CircularProgress sx={{color: "#FFFFFF", marginLeft: "5px"}} size={18} />
       )}
     </button>
   );
 };
+
 export default Button;
