@@ -57,6 +57,7 @@ THIRD_PARTY_APPS = [
     "rest_auth",
     "corsheaders",
     "dj_rest_auth",
+    "django_rest_passwordreset",
 ]
 
 AUTH_USER_MODEL = "users.User"
@@ -78,6 +79,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://13.50.25.74:8000",
     "http://127.0.0.1:3000",
     "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -196,7 +199,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
@@ -313,3 +316,45 @@ DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"
 STRIPE_API_KEY = STRIPE_LIVE_SECRET_KEY
 if not STRIPE_LIVE_MODE:
     STRIPE_API_KEY = STRIPE_TEST_SECRET_KEY
+
+
+# -----------------
+# SENDGRID Settings
+# -----------------
+SENDGRID_API_KEY = env.str('SENDGRID_API_KEY', '')
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+EMAIL_HOST = env.str("EMAIL_HOST", "smtp.sendgrid.net")
+EMAIL_HOST_USER = env.str("SENDGRID_USERNAME", "")
+EMAIL_HOST_PASSWORD = env.str("SENDGRID_PASSWORD", "")
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+if DEBUG or not (EMAIL_HOST_USER and EMAIL_HOST_PASSWORD):
+    # output email to console instead of sending
+    if not DEBUG:
+        logging.warning("You should setup `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` env vars to send emails.")
+    EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+HTTP_USER_AGENT_HEADER = 'HTTP_USER_AGENT'
+# ------------------------
+# END of SENDGRID Settings
+# ------------------------
+
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    # Use custom serializer that has no username and matches web signup
+    "REGISTER_SERIALIZER": "users.api.v1.serializers.UserSignUpSerializer",
+}
+
+
+# Settings for django-rest-passwordreset
+OLD_PASSWORD_FIELD_ENABLED = True
+
+# Six Digit Token Generator
+DJANGO_REST_PASSWORDRESET_TOKEN_CONFIG = {
+    "CLASS": "django_rest_passwordreset.tokens.RandomNumberTokenGenerator",
+    "OPTIONS": {
+        "min_number": 10000,
+        "max_number": 99999
+    }
+}

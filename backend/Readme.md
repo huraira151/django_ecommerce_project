@@ -7,7 +7,7 @@ This project is a Django-based backend for an ecommerce application. It provides
 
 - Sign-up API: Users have the option to sign up as either a seller or a customer. This flexibility ensures that the platform caters to a wide range of user roles and requirements.
 
-- Forgot Password API: In case users forget their passwords, this API allows them to recover access to their accounts securely and efficiently.
+- Forgot Password API: In case users forget their passwords, this API allows them to recover access to their accounts securely and efficiently. I have done this Using SENDGRID user will recieve an email containing token to reset password
 
 - CRUD APIs: The system provides comprehensive CRUD (Create, Read, Update, Delete) APIs for managing essential entities such as Products, Categories, Cart, Orders, and Customers. Additionally, customers can express their opinions by leaving reviews for both products and sellers. Sellers, on the other hand, have the ability to respond to these reviews, fostering a two-way communication channel.
 
@@ -15,7 +15,7 @@ This project is a Django-based backend for an ecommerce application. It provides
 
 - Customized Django Admin Panel: The platform offers a highly tailored and user-friendly Django Admin Panel, empowering administrators to efficiently manage the database and streamline administrative tasks.
 
-- User-Friendly Front-End: A dedicated front-end interface (Made with React JS) complements the back-end functionality, providing users with intuitive login and sign-up pages integrated with the aforementioned APIs. Additionally, a visually appealing static landing page engages visitors and offers a glimpse into the platform's offerings.
+- User-Friendly Front-End: A dedicated front-end interface (Made with React JS) complements the back-end functionality, providing users with intuitive login, sign-up, forgot and reset password, ecommerce landing pages integrated with the aforementioned APIs. Additionally, a visually appealing static landing page engages visitors and offers a glimpse into the platform's offerings.
 
 - OpenAPI Integration (Swagger): With OpenAPI integrated via Swagger, developers can explore and interact with the platform's APIs effortlessly, fostering seamless integration with other systems and applications.
 
@@ -62,10 +62,10 @@ python manage.py migrate
 
 ### Below are the screenshots of this project
 
-![admin panel](./ecommerce_project_django/static/admin_panel.png "Admin Panel")
+Customized Admin Panel|                                        Browsable API                                        |Swagger (OpenAPI)
+:-------------------------:|:-------------------------------------------------------------------------------------------:|:-------------------------:
+![admin panel](./ecommerce_project_django/static/admin_panel.png "Admin Panel")  | ![product listing](./ecommerce_project_django/static/product_listing.png "Product Listing") | ![swagger](./ecommerce_project_django/static/swagger_aka_openapi.png "Swagger")
 
-![product listing](./ecommerce_project_django/static/product_listing.png "Product Listing")
-
-![product update](./ecommerce_project_django/static/product_create.png "Product Update")
-
-![swagger](./ecommerce_project_django/static/swagger_aka_openapi.png "Swagger")
+Login Page                                                                    |                                    SignUp Page                                     |                              Forgot Password                               |                           Reset Password                                
+:----------------------------------------------------------------------------:|:----------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|:-----------------------------------------------------------------------:
+![admin panel](./ecommerce_project_django/static/loginPage.png "Login Page")  | ![product listing](./ecommerce_project_django/static/signupPage.png "SignUp Page") | ![swagger](./ecommerce_project_django/static/forgotPage.png "Forgot Pass") | ![swagger](./ecommerce_project_django/static/resetPage.png "Reset Pass")
