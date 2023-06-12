@@ -66,6 +66,7 @@ INSTALLED_APPS += LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -180,6 +181,11 @@ if USE_S3:
     AWS_DEFAULT_ACL = env.str("AWS_DEFAULT_ACL", "public-read")
     AWS_MEDIA_LOCATION = env.str("AWS_MEDIA_LOCATION", "media")
     AWS_AUTO_CREATE_BUCKET = env.bool("AWS_AUTO_CREATE_BUCKET", True)
+
+    # # S3 Ninja Setting _________start
+    # AWS_S3_ENDPOINT_URL = 'http://localhost:9444/s3/'
+    # # S3 Ninja Setting ---------end
+
     DEFAULT_FILE_STORAGE = env.str(
         "DEFAULT_FILE_STORAGE", "home.storage_backends.MediaStorage"
     )
