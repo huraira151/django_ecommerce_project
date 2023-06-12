@@ -2,6 +2,8 @@
 
 This project is a Django-based backend for an ecommerce application. It provides a set of APIs for managing ecommerce-related functionality, including models for products, orders, customers, and integration with Stripe for payment processing. The admin panel has been customized using the Jet theme.
 
+> I have deployed this project on AWS EC2 which you can access by visiting this link http://13.50.25.74:8000/
+
 ### Features
 - Login API: Users can easily log in to the system using their credentials or through popular social media platforms like Facebook, Google, and LinkedIn. This provides a seamless and convenient login experience.
 
@@ -18,6 +20,8 @@ This project is a Django-based backend for an ecommerce application. It provides
 - User-Friendly Front-End: A dedicated front-end interface (Made with React JS) complements the back-end functionality, providing users with intuitive login, sign-up, forgot and reset password, ecommerce landing pages integrated with the aforementioned APIs. Additionally, a visually appealing static landing page engages visitors and offers a glimpse into the platform's offerings.
 
 - OpenAPI Integration (Swagger): With OpenAPI integrated via Swagger, developers can explore and interact with the platform's APIs effortlessly, fostering seamless integration with other systems and applications.
+
+- AWS S3 Integration: Static files such as product images and user avatars are stored and managed using AWS S3. This integration ensures scalable and reliable storage, resulting in faster and more reliable content delivery.
 
 ## Getting Started
 
@@ -48,12 +52,15 @@ Create PostgresQL (install first along with postgis) Database using these comman
 ```
 sudo -u postgres psql
 
-CREATE DATABASE yourdbname;
-CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
-GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
+CREATE DATABASE ecom_db;
+CREATE USER ecom_user WITH ENCRYPTED PASSWORD '123';
+GRANT ALL PRIVILEGES ON DATABASE ecom_db TO ecom_user;
 ```
+Additional Info just for knowledge
 
-Last but not the least
+> Command to import dumpfile in database<br> ```sudo psql -U importdump_user -d importdump -h localhost < file_dump.sql;```
+
+Lastly
 
 ```
 python manage.py makemigrations
