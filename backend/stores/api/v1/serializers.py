@@ -2,6 +2,7 @@ from rest_framework import serializers
 from users.api.v1.serializers import UserSerializer, SellerSerializer
 from stores.models import Category, Product, Cart, CartItem, Order, \
     OrderItems, SellerReview, SellerReviewReply, SellerProductReview, SellerProductReviewReply
+from django.db import transaction
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -42,18 +43,22 @@ class AddToCartSerializer(serializers.ModelSerializer):
     class Meta:
         model = CartItem
         fields = ['id', 'cart', 'product', 'quantity']
+        extra_kwargs = {"cart": {"read_only": True}}
 
     def create(self, validated_data):
-        cart_item = CartItem.objects.filter(cart=validated_data.get('cart'),
-                                            product_id=validated_data.get('product')).first()
-        if cart_item:
-            cart_item.quantity = validated_data.get('quantity')
+        with transaction.atomic():
+            cart_id = Cart.objects.get_or_create(user=self.context['request'].user)[0].id
+            product = validated_data.get('product')
+            quantity = validated_data.get('quantity')
+
+            cart_item, created = CartItem.objects.get_or_create(
+                cart_id=cart_id,
+                product_id=product.id)
+
+            cart_item.quantity = quantity
             cart_item.save()
+
             return cart_item
-        new_cart_item = CartItem.objects.create(cart=validated_data.get('cart'),
-                                                product_id=validated_data.get('product'),
-                                                quantity=validated_data.get('quantity'))
-        return new_cart_item
 
 # -------------------
 # End of Cart Section
@@ -150,7 +155,7 @@ class ProductListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['id', 'seller', 'category', 'product_review', 'name', 'description', 'price']
+        fields = ['id', 'name', 'description', 'price', 'seller', 'category', 'product_review']
 
 # ---------------------------------------
 # End of Product Review and Reply Section
