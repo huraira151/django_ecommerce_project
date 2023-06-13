@@ -58,6 +58,7 @@ class Category(models.Model):
 class Product(models.Model):
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE, related_name='seller_product')
     name = models.CharField(max_length=100)
+    image = models.FileField(max_length=100, upload_to='product', blank=True, null=True)
     description = models.TextField(max_length=1000, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
@@ -74,7 +75,7 @@ class Cart(models.Model):
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items_in_cart')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='products_in_cart')
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
