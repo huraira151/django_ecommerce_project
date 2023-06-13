@@ -59,8 +59,7 @@
       .signin-divider {
         padding: 20px;
         width: 100%;
-        color: #6b5b95;
-        opacity: 0.5;
+        color: rgb(88, 88, 88);
       }
 
       .social-login-btn-wrapper {
@@ -88,11 +87,12 @@
         }
         .create-account {
           display: flex;
-          color: rgba(177, 165, 165, 0.911);
+          color: rgb(88, 88, 88);
           p {
             color: black;
+            margin-left: 10px !important;
             text-decoration: underline;
-            margin: 0 !important;
+            margin: 0;
             cursor: pointer;
           }
         }

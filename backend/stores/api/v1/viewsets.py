@@ -41,7 +41,6 @@ class AddToCartViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         data = {
-            "cart": Cart.objects.get_or_create(user=request.user)[0].id,
             "product": request.data.get("product"),
             "quantity": request.data.get("quantity")
         }
