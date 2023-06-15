@@ -2,7 +2,7 @@
 
 This project is a Django-based backend for an ecommerce application. It provides a set of APIs for managing ecommerce-related functionality, including models for products, orders, customers, and integration with Stripe for payment processing. The admin panel has been customized using the Jet theme.
 
-> I have deployed this project on AWS EC2 which you can access by visiting this link http://13.50.25.74:8000/
+> I have deployed this project on AWS EC2 which you can access by visiting this link http://13.50.25.74:8000/ or https://0b27-13-50-25-74.ngrok-free.app/
 
 ### Features
 - Login API: Users can easily log in to the system using their credentials or through popular social media platforms like Facebook, Google, and LinkedIn. This provides a seamless and convenient login experience.
